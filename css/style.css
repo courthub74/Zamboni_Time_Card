@@ -10,20 +10,21 @@
     --text-color: #031406;
 
     /* Buttons */
-    --button-background: #031406;
+    /* --button-background: #031406; */
+    --button-background: #000000;
     --button-text: white;
 
     /* App State Colors */
-    --app-state-background: #56645B;
-    --app-state-trim: #061A08;
+    --app-state-background: #74AEDC;
+    --app-state-trim: #000000;
 
     /* Form Colors */
-    --form-background: #56645B;
-    --form-trim: #031406;
+    --form-background: #74AEDC;
+    --form-trim: #000000;
 
     /* Inputs */
     --input-background: #D9D9D9;
-    --input-trim: #031406;
+    --input-trim: #000000;
 
     /* Trims */
     /* --trim-color: #031406; */
@@ -35,24 +36,24 @@
 /* Darkmode (Nite Mode) */
 .darkmode {
     /* Base */
-    --base-color: #031406;
+    --base-color: #000000;
     --text-color: white;
 
     /* Buttons */
-    --button-background: #0A310F;
+    --button-background: #74AEDC;
     --button-text: white;
 
     /* App State Colors */
-    --app-state-background: #031406;
-    --app-state-trim: #3A603A;
+    --app-state-background: #000000;
+    --app-state-trim: #74AEDC;
 
     /* Form Colors */
-    --form-background: #081309;
-    --form-trim: #3A603A;
+    --form-background: #000000;
+    --form-trim: #74AEDC;
 
     /* Inputs */
-    --input-background: #031406;
-    --input-trim: #0A310F;
+    --input-background: #000000;
+    --input-trim: #74AEDC;
 
     /* Trim */
     /* --trim-color:#3A603A; */
@@ -486,7 +487,7 @@ body {
     #dropdown_btn {
         background-color: var(--input-background);
         border: none;
-        border: 2px solid var(--button-background);
+        border: 2px solid var(--input-trim);
         border-radius: 5px;
         color: var(--text-color);
         padding: 2em 1em;
