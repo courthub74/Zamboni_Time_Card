@@ -30,7 +30,8 @@
     /* --trim-color: #031406; */
 
     /* Day/Nite */
-    --theme-switch-background: #D9D9D9;
+    --theme-switch-background: #74addc53;
+    /* --theme-switch-background: #D9D9D9; */
 }
 
 /* Darkmode (Nite Mode) */
@@ -59,7 +60,7 @@
     /* --trim-color:#3A603A; */
 
     /* Day/Nite */
-    --theme-switch-background: #061A08;
+    --theme-switch-background: #74addc5a;
 }
 
 /* ********** */
@@ -115,9 +116,9 @@ body {
         cursor: pointer;
     }
 
-    #theme_switch img {
-        height: 40px;
-        width: 40px;
+    #theme_switch .day_nite_logos img {
+        height: 20px;
+        width: 20px;
     }
 
     /* NOW set the order of the IMG in the nite/day button */
@@ -366,13 +367,18 @@ body {
         border-radius: 50%;
         border: none;
         background-color: var(--theme-switch-background);
-        height: 90px;
-        width: 90px;
+        height: 70px;
+        width: 70px;
         padding: 0;
         position: fixed;
         top: 20px;
         right: 20px;
         cursor: pointer;
+    }
+
+    #theme_switch .day_nite_logos img {
+        height: 40px;
+        width: 40px;
     }
 
     /* NOW set the order of the IMG in the nite/day button */
