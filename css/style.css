@@ -103,8 +103,8 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 50px;
-        width: 50px;
+        height: 60px;
+        width: 60px;
         padding: 0;
         border-radius: 50%;
         border: none;
@@ -117,8 +117,8 @@ body {
     }
 
     #theme_switch .day_nite_logos img {
-        height: 20px;
-        width: 20px;
+        height: 35px;
+        width: 35px;
     }
 
     /* NOW set the order of the IMG in the nite/day button */
@@ -152,6 +152,7 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        gap: .8em;
         /* width: 50%; */
     }
 
@@ -165,7 +166,7 @@ body {
     /* Time Card Logo */
     .time_card_logo {
         width: 15em;
-        height: 3em;
+        height: 4em;
     }
 
     /* Time Card Logo Display order */
@@ -191,7 +192,7 @@ body {
         background-color: var(--app-state-background);
         border: 2px solid var(--app-state-trim);
         color: white;
-        padding: .3em 5em;
+        padding: .4em 5em;
         text-align: center;
         font-size: 1.1rem;
         border-radius: 5px;
