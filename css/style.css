@@ -69,37 +69,57 @@
 /* ********** */
 /* ********** */
 
-* {
-    margin: 0;
-    padding: 0;
-}
 
-/* Body for All */
-body {
-    min-height: 100vh;
-    background-color: var(--base-color);
-    color: var(--text-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-family: 'Poppins';
-    /* background-color: blue; */
-}
 
 /* Mobile */
 @media screen and (max-width: 800px) {
 
-   /* Nav */
-   #main_nav {
-        width: 100%;
-        display: flex;
-        justify-content: right;
+    * {
+        margin: 0;
+        padding: 0;
     }
+
+    /* Container */
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3em;
+        width: 50%;
+    }
+    
+    /* Body for All */
+    body {
+        min-height: 100vh;
+        background-color: var(--base-color);
+        color: var(--text-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: 'Poppins';
+        /* background-color: blue; */
+    }
+
+    /* Nav */
+    .main_nav {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Menu img sizing */
+   
+
+ 
+    /* Menu img order */
 
     /* Theme Switch Buttons */
     #theme_switch {
-        margin: 0 2em 0 2em;
+        margin: 0 2em 2em 2em;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -116,6 +136,7 @@ body {
         cursor: pointer;
     }
 
+    /* Site theme switch img */
     #theme_switch .day_nite_logos img {
         height: 35px;
         width: 35px;
@@ -134,16 +155,6 @@ body {
     /* Make Last child visible in nite mode */
     .darkmode #theme_switch .day_nite_logos img:last-child {
         display: block;
-    }
-
-    /* Container */
-    .container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 3em;
-        width: 50%;
     }
 
     /* Header Div */

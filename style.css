@@ -76,7 +76,19 @@
 
 /* Body for All */
 body {
-    min-height: 100vh;
+    height: 100vh;
+    background-color: var(--base-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Poppins';
+    /* background-color: blue; */
+}
+
+.container {
+    height: 100vh;
     background-color: var(--base-color);
     color: var(--text-color);
     display: flex;
@@ -90,11 +102,11 @@ body {
 /* Mobile */
 @media screen and (max-width: 800px) {
 
-   /* Nav */
-   #main_nav {
-        width: 100%;
+
+    .main_nav {
         display: flex;
-        justify-content: right;
+        justify-content: space-between;
+        /* width: 100%; */
     }
 
     /* Theme Switch Buttons */

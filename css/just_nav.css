@@ -1,0 +1,183 @@
+/* Import Poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Calligraffitti&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noticia+Text&family=Playfair+Display&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Display:wght@500;700;900&family=Satisfy&family=Shadows+Into+Light&family=Shadows+Into+Light+Two&display=swap');
+
+/* CSS Variables */
+
+/* The Root (Day Mode) */
+:root {
+    /* Base */
+    --base-color: white;
+    --text-color: #031406;
+
+    /* Buttons */
+    /* --button-background: #031406; */
+    --button-background: #000000;
+    --button-text: white;
+
+    /* App State Colors */
+    --app-state-background: #74AEDC;
+    --app-state-trim: #000000;
+
+    /* Form Colors */
+    --form-background: #74AEDC;
+    --form-trim: #000000;
+
+    /* Inputs */
+    --input-background: #D9D9D9;
+    --input-trim: #000000;
+
+    /* Trims */
+    /* --trim-color: #031406; */
+
+    /* Day/Nite */
+    --theme-switch-background: #74addc53;
+    /* --theme-switch-background: #D9D9D9; */
+}
+
+/* Darkmode (Nite Mode) */
+.darkmode {
+    /* Base */
+    --base-color: #000000;
+    --text-color: white;
+
+    /* Buttons */
+    --button-background: #74AEDC;
+    --button-text: white;
+
+    /* App State Colors */
+    --app-state-background: #000000;
+    --app-state-trim: #74AEDC;
+
+    /* Form Colors */
+    --form-background: #000000;
+    --form-trim: #74AEDC;
+
+    /* Inputs */
+    --input-background: #000000;
+    --input-trim: #74AEDC;
+
+    /* Trim */
+    /* --trim-color:#3A603A; */
+
+    /* Day/Nite */
+    --theme-switch-background: #74addc5a;
+}
+
+
+/* Mobile */
+@media screen and (max-width: 800px) {
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        height: 100vh;
+    }
+
+    .container {
+        height: 100vh;
+        background-color: var(--base-color);
+        color: var(--text-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: 'Poppins';
+    }
+
+    /* NavBar */
+    .main_nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 70%;
+    }
+
+    /* Hamburger div */
+    .burger_div #menu_button {
+        background-color: blue;
+    }
+
+    /* Hamburger whole div Sizing */
+    #menu_button .burger {
+        height: 40px;
+        width: 40px;
+    }
+
+    /* Burger menu styling */
+    #menu_button {
+        margin: 0 2em 2em 2em;
+        background-color: var(--base-color);
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+        width: 60px;
+        padding: 0;
+        /* border-radius: 50%; */
+        /* Sets the Theme Switch button to top right corner */
+        /* position: fixed;
+        top: 20px;
+        right: 10px; */
+        cursor: pointer;
+    }
+
+    /* Burger Order */
+
+    /* Turn off last img for day mode */
+    .main_nav .burger #menu_button img:last-child{
+        display: none;
+    }
+
+    /* Invert for nite mode */
+    .darkmode .main_nav .burger #menu_button img:first-child {
+        display: none;
+    }
+
+    /* Make Last child visible in nite mode */
+    .darkmode .main_nav .burger #menu_button img:last-child {
+        display: block;
+    }
+
+     /* Theme Switch Buttons */
+     #theme_switch {
+        margin: 0 2em 2em 2em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+        width: 60px;
+        padding: 0;
+        border-radius: 50%;
+        border: none;
+        background-color: var(--theme-switch-backgrd);
+        /* Sets the Theme Switch button to top right corner */
+        /* position: fixed;
+        top: 20px;
+        right: 10px; */
+        cursor: pointer;
+    }
+
+    /* Site theme switch img */
+    #theme_switch .day_nite_logos img {
+        height: 35px;
+        width: 35px;
+    }
+
+    /* NOW set the order of the IMG in the nite/day button */
+    #theme_switch .day_nite_logos img:last-child {
+        display: none;
+    }
+
+    /* Invert this for nite mode */
+    .darkmode #theme_switch .day_nite_logos img:first-child {
+        display: none;
+    }
+
+    /* Make Last child visible in nite mode */
+    .darkmode #theme_switch .day_nite_logos img:last-child {
+        display: block;
+    }
+}
