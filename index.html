@@ -39,19 +39,45 @@
             z-index: 1000;
         }
 
+        /* The Whole Button (Menu Burger) */
         .burger_div button {
             background: none;
             border: none;
             cursor: pointer;
             padding: 0;
+            position: relative;
+            width: 30px;
+            height: 30px;
         }
 
+        /* The stacked logos (menu button) */
         .burger {
             width: 30px;
             height: 30px;
             transition: transform 0.3s ease;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
 
+        /* Order for the Menu button logos */
+
+        /* Make the dark mode menu go away */
+        #menu_button .menu_burgers .burger:last-child {
+            display: none;
+        }
+
+        /* Make the lite mode menu come on in dark mode */
+        .dark-mode #menu_button .menu_burgers .burger:first-child {
+            display: none;
+        }
+
+        /* Make the last child visible in darkmode */
+        .dark-mode #menu_button .menu_burgers .burger:last-child {
+            display: block;
+        }
+
+        /* When Burger button is active */
         .burger.active {
             transform: rotate(90deg);
         }
@@ -63,12 +89,14 @@
             padding: 0;
         }
 
+        /* The Whole Button (day nite) */
         .day_nite_logos {
             position: relative;
             width: 30px;
             height: 30px;
         }
 
+        /* The stacked logos (day nite) */
         .day-nite {
             position: absolute;
             top: 0;
@@ -78,6 +106,7 @@
             transition: opacity 0.3s ease;
         }
 
+        /* Order for the Dark Lite Mode Logos */
         body.dark-mode .day-nite:nth-child(2) {
             opacity: 0;
         }
@@ -144,8 +173,10 @@
         <!-- Burger -->
         <div class="burger_div">
             <button id="menu_button">
-                <img src="../img/hamburgers/hamburger-black.png" class="burger" id="burger_one" alt="menu">
-                <img src="../img/hamburgers/hamburger-white.png" class="burger" id="burger_two" alt="menu">
+                <div class="menu_burgers">
+                    <img src="../img/hamburgers/hamburger-black.png" class="burger" id="burger_one" alt="menu">
+                    <img src="../img/hamburgers/hamburger-white.png" class="burger" id="burger_two" alt="menu">
+                </div>
             </button>
         </div>
         <!-- Light/Dark -->
@@ -163,8 +194,8 @@
         <a href="#" class="menu-item">🏠 <span>Home</span></a>
         <a href="#" class="menu-item">👤 <span>Profile</span></a>
         <a href="#" class="menu-item">⚙️ <span>Settings</span></a>
-        <a href="#" class="menu-item">📱 <span>Contact</span></a>
-        <a href="#" class="menu-item">ℹ️ <span>About</span></a>
+        <a href="#" class="menu-item">📱 <span>Tech Support</span></a>
+        
     </div>
 
     <!-- Overlay -->
