@@ -71,9 +71,9 @@
         padding: 0;
     }
 
-    body {
+    /* body {
         height: 100vh;
-    }
+    } */
 
     .container {
         height: 100vh;
@@ -84,25 +84,33 @@
         align-items: center;
         flex-direction: column;
         font-family: 'Poppins';
+        gap: 2em;
+        width: 100%;
     }
 
     /* NavBar */
     .main_nav {
         display: flex;
         justify-content: space-between;
+        justify-content: center;
         align-items: center;
-        width: 70%;
+        width: 100%;
+        background-color: blue;
     }
 
-    /* Hamburger div */
-    .burger_div #menu_button {
-        background-color: blue;
+     /* Menu Button Position */
+     #menu_button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     /* Hamburger whole div Sizing */
     #menu_button .burger {
         height: 40px;
+        /* height: 70px; */
         width: 40px;
+        /* width: 70px; */
     }
 
     /* Burger menu styling */
@@ -141,14 +149,14 @@
         display: block;
     }
 
-     /* Theme Switch Buttons */
+     /* Theme Switch Div */
      #theme_switch {
         margin: 0 2em 2em 2em;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 60px;
-        width: 60px;
+        height: 100px;
+        width: 100px;
         padding: 0;
         border-radius: 50%;
         border: none;
@@ -158,6 +166,11 @@
         top: 20px;
         right: 10px; */
         cursor: pointer;
+    }
+
+   .day_nite {
+        width: 100px;
+        height: 100px;
     }
 
     /* Site theme switch img */
@@ -179,5 +192,193 @@
     /* Make Last child visible in nite mode */
     .darkmode #theme_switch .day_nite_logos img:last-child {
         display: block;
+    }
+
+    /* Header Div */
+    .header_div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: .8em;
+        /* width: 50%; */
+    }
+
+    /* Time Card Logo Div */
+    .header_logos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Time Card Logo */
+    .time_card_logo {
+        width: 15em;
+        height: 4em;
+    }
+
+     /* Time Card Logo Display order */
+
+    /* NOW set the order of the IMGs in the Logo header */
+    .header_logos img:last-child {
+        display: none;
+    }
+
+    /* Invert this for nite mode */
+    .darkmode .header_logos img:first-child {
+        display: none;
+    }
+
+    /* Make the Last child visible in the nite mode */
+    .darkmode .header_logos img:last-child {
+        display: block;
+    }
+
+     /* App State */
+     .app_state {
+        background-color: var(--app-state-background);
+        border: 2px solid var(--app-state-trim);
+        color: white;
+        padding: .4em 5em;
+        text-align: center;
+        font-size: 1.1rem;
+        border-radius: 5px;
+    }
+
+    /* Form */
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5em;
+        border: 2px solid var(--form-trim);
+        background-color: var(--form-background);
+        width: 40%;
+        padding: 2em 3em;
+        border-radius: 5px;
+        font-family: 'Poppins';
+        font-size: 1.2rem;
+    }
+
+    /* Labels */
+    label {
+        color: var(--text-color);
+        font-family: 'Poppins';
+        font-size: 1.1rem;
+    }
+
+    /* Input Divs */
+    .input_div {
+        display: flex;
+        flex-direction: column;  
+        gap: .5em;
+        /* width: 100%; */
+    }
+
+    /* Dropdown for Login Members */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+    }
+
+    /* The Dropdown Button (The Select) */
+    #dropdown_btn {
+        background-color: var(--input-background);
+        border: none;
+        border: 2px solid var(--button-background);
+        border-radius: 5px;
+        color: var(--text-color);
+        padding: .6em;
+        width: 15em;
+        cursor: pointer;
+        display: flex;
+        /* justify-content: left; */
+    }
+
+    /* Name List */
+    .name_list {
+        display: none;
+        position: absolute;
+        background-color: var(--input-background);
+        z-index: 1;
+        color: var(--text-color);
+        width: 100%;
+        font-size: 1.2rem;
+    }
+
+    /* Look up how to set colors of select dropdown */
+    .name_list.show {
+        border: 1px solid var(--input-trim);
+    }
+
+    /* Pin Field */
+    .pin_field {
+        display: flex;
+        gap: .7em;
+        /* gap: 1.5em; */
+        width: 100%;
+        /* background-color: blanchedalmond; */
+    }
+
+    /* Each Pin Field */
+    .pin_put {
+        border: 2px solid var(--input-trim);
+        background-color: var(--input-background);
+        border-radius: 5px;
+        height: 2.4em;
+        width: 2.2em;
+        position: relative;
+        font-size: 1rem;
+        text-align: center;
+        color: var(--text-color);
+    }
+
+    /* Remove focus on Input */
+    input:focus {
+        outline: none;
+    }
+
+    /* Clear Pins / Forgot Pin */
+    .clear_forget {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /* Reset the Form Button */
+    .reset_button {
+        margin: 1em 0 0 0;
+        background-color: var(--form-background);
+        border: 1px solid var(--text-color);
+        border: none;
+        border-radius: 5px;
+        color: var(--text-color);
+        padding: .3em;
+        cursor: pointer;
+        font-family: 'Poppins';
+        font-size: .8rem;
+    }
+
+    /* Submit Button */
+    .submit {
+        width: 100%;
+        background-color: var(--button-background);
+        color: var(--button-text);
+        border: none;
+        border-radius: 5px;
+        padding: .7em 1em;
+        font-weight: bold;
+        font-family: 'Poppins';
+        cursor: pointer;
+        font-size: .9rem;
+    }
+
+    /* Create Account */
+    .create_acct {
+        text-decoration: none;
+        color: var(--text-color);
+        font-family: 'Poppins';
+        font-size: .8rem;
+        font-weight: bold;
     }
 }

@@ -7,14 +7,14 @@
 
     <link rel="stylesheet" href="../css/just_nav.css">
 </head>
-<body class="darkmode">
+<body>
     <div class="container">
         <nav class="main_nav">
              <!-- Burger -->
              <div class="burger_div">
                 <button id="menu_button">
                     <img src="../img/hamburgers/hamburger-black.png" class="burger" id="burger_one">
-                    <img src="../img/hamburgers/hamburger-white.png" class="burger" id="burger_two"> 
+                    <!-- <img src="../img/hamburgers/hamburger-white.png" class="burger" id="burger_two">  -->
                 </button>
             </div>
 
@@ -22,12 +22,75 @@
             <button id="theme_switch">
                 <!-- Day/Nite -->
                 <div class="day_nite_logos">
-                    <img src="../img/day-nite/darkmode_circle.png" alt="day-nite">
-                    <img src="../img/day-nite/litemode_circle.png" alt="day-nite">
+                    <img src="../img/day-nite/darkmode_circle.png" alt="day-nite" class="day-nite">
+                    <img src="../img/day-nite/litemode_circle.png" alt="day-nite" class="day-nite">
                 </div>
-                <!-- <p>Day/Nite</p> -->
             </button>
         </nav>
+
+        <!-- Header -->
+        <div class="header_div">
+            <!-- App Title -->
+
+            <!-- Day/Nite Logos -->
+             <div class="header_logos">
+                <img src="../img/hazel-park-logo/TimeCardLogoBlack.png" class="time_card_logo" id="time_card_top">
+                <img src="../img/hazel-park-logo/TimeCardLogoWhite.png" class="time_card_logo" id="time_card_bottom">
+             </div>
+
+             <!-- App State -->
+             <p class="app_state">Login</p>
+
+         </div>
+
+         <!-- Form -->
+         <form id="login_form">
+
+            <!-- Name -->
+             <div class="input_div">
+                <label for="name">Name:</label>
+                <!-- Input Below -->
+                 <div class="dropdown">
+                    <select id="dropdown_btn" class="dropdown_btn">
+                        <!-- The Names logged into the database from here -->
+                        <option value="#">Select:</option>
+                        <!-- EACH Value WILL BE READ FROM THE DB -->
+                        <option value="Lastname, One">Lastname, Onename</option>
+                        <option value="Lastname, Two">Lastname, Twoname</option>
+                        <option value="Lastname, Three">Lastname, Threename</option>
+                        <option value="Lastname, Four">Lastname, Fourname</option>
+                        <option value="Lastname, Five">Lastname, Fivename</option>
+                    </select>
+                 </div>
+             </div>
+
+              <!-- Pin # -->
+              <div class="input_div">
+                <label for="pin_num">Pin:</label>
+                <div class="pin_field" id="pin_field">
+                    <input type="password" class="pin_put" maxlength="1">
+                    <input type="password" class="pin_put" maxlength="1">
+                    <input type="password" class="pin_put" maxlength="1">
+                    <input type="password" class="pin_put" maxlength="1">
+                </div>
+
+                <!-- Clear or Forgot Pin -->
+                 <div class="clear_forget">
+                    <!-- Reset Pins Button -->
+                    <button class="reset_button" id="reset_button">Clear the Pin</button>
+
+                    <!-- Forgot Pin Button -->
+                     <button class="reset_button" id="forgot_button">Forgot Pin?</button>
+                 </div>
+                    
+              </div>
+
+               <!-- Submit Button -->
+               <button class="submit" id="submit_login">Submit</button>
+
+               <!-- Create Account -->
+               <a href="../html/create_acct.html" class="create_acct">Create an Account</a>
+         </form>
     </div>
 </body>
 </html>

@@ -3,107 +3,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Time Card</title>
+    <title>Responsive Navigation Bar with Menu</title>
+    <style>
+        :root {
+            --background-color: #ffffff;
+            --text-color: #000000;
+            --menu-background: #f5f5f5;
+            --menu-hover: #e0e0e0;
+        }
 
-    <!-- CSS -->
-     <link rel="stylesheet" href="./style.css">
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+            overflow-x: hidden;
+        }
+
+        body.dark-mode {
+            --background-color: #121212;
+            --text-color: #ffffff;
+            --menu-background: #1e1e1e;
+            --menu-hover: #2d2d2d;
+        }
+
+        .main_nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background-color: var(--background-color);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1000;
+        }
+
+        .burger_div button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .burger {
+            width: 30px;
+            height: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .burger.active {
+            transform: rotate(90deg);
+        }
+
+        #theme_switch {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .day_nite_logos {
+            position: relative;
+            width: 30px;
+            height: 30px;
+        }
+
+        .day-nite {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: opacity 0.3s ease;
+        }
+
+        body.dark-mode .day-nite:nth-child(2) {
+            opacity: 0;
+        }
+
+        body:not(.dark-mode) .day-nite:nth-child(1) {
+            opacity: 0;
+        }
+
+        /* Slide-out Menu Styles */
+        .side-menu {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100vh;
+            background-color: var(--menu-background);
+            transition: transform 0.3s ease-in-out;
+            padding-top: 80px;
+            z-index: 999;
+        }
+
+        .side-menu.active {
+            transform: translateX(300px);
+        }
+
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out;
+            z-index: 998;
+        }
+
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .menu-item {
+            padding: 1rem 2rem;
+            display: block;
+            color: var(--text-color);
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+        }
+
+        .menu-item:hover {
+            background-color: var(--menu-hover);
+        }
+
+        /* For demonstrating menu items */
+        .menu-item span {
+            margin-left: 10px;
+        }
+    </style>
 </head>
 <body>
-
-    <!-- Page Content -->
-     <div class="container">
-
-        <!-- Navbar -->
-        <nav class="main_nav">
-
-            <!-- Burger -->
-            <div class="burger">
-                <button id="menu_button">
-                    <img src="./img/hamburgers/hamburger-black.png" class="burger">
-                    <img src="./img/hamburgers/hamburger-white.png" class="burger"> 
-                </button>
-            </div>
-
-            <!-- Light/Dark -->
-            <button id="theme_switch">
-                <!-- Day/Nite -->
-                <div class="day_nite_logos">
-                    <img src="./img/day-nite/darkmode_circle.png" alt="day-nite">
-                    <img src="./img/day-nite/litemode_circle.png" alt="day-nite">
-                </div>
-                <!-- <p>Day/Nite</p> -->
+    <nav class="main_nav">
+        <!-- Burger -->
+        <div class="burger_div">
+            <button id="menu_button">
+                <img src="../img/hamburgers/hamburger-black.png" class="burger" id="burger_one" alt="menu">
+                <img src="../img/hamburgers/hamburger-white.png" class="burger" id="burger_two" alt="menu">
             </button>
+        </div>
+        <!-- Light/Dark -->
+        <button id="theme_switch">
+            <!-- Day/Nite -->
+            <div class="day_nite_logos">
+                <img src="../img/day-nite/litemode_circle.png" alt="light mode" class="day-nite">
+                <img src="../img/day-nite/darkmode_circle.png" alt="dark mode" class="day-nite">
+            </div>
+        </button>
+    </nav>
 
-        </nav>
-        
-        <!-- Header -->
-         <div class="header_div">
-            <!-- App Title -->
+    <!-- Side Menu -->
+    <div class="side-menu">
+        <a href="#" class="menu-item">🏠 <span>Home</span></a>
+        <a href="#" class="menu-item">👤 <span>Profile</span></a>
+        <a href="#" class="menu-item">⚙️ <span>Settings</span></a>
+        <a href="#" class="menu-item">📱 <span>Contact</span></a>
+        <a href="#" class="menu-item">ℹ️ <span>About</span></a>
+    </div>
 
-            <!-- Day/Nite Logos -->
-             <div class="header_logos">
-                <img src="./img/hazel-park-logo/TimeCardLogoBlack.png" class="time_card_logo" id="time_card_top">
-                <img src="./img/hazel-park-logo/TimeCardLogoWhite.png" class="time_card_logo" id="time_card_bottom">
-             </div>
+    <!-- Overlay -->
+    <div class="menu-overlay"></div>
 
-             <!-- App State -->
-             <p class="app_state">Login</p>
+    <script>
+        // Theme switching functionality
+        const themeSwitch = document.getElementById('theme_switch');
+        const body = document.body;
 
-         </div>
+        themeSwitch.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            // If the body contains dark mode, store it in a variable
+            const isDarkMode = body.classList.contains('dark-mode');
+            // store that variable into local storage
+            localStorage.setItem('darkMode', isDarkMode);
+        });
 
-         <!-- Form -->
-         <form id="login_form">
+        // If the local storage is in dark mode, make the body of the page dark mode
+        if (localStorage.getItem('darkMode') === 'true') {
+            body.classList.add('dark-mode');
+        }
 
-            <!-- Name -->
-             <div class="input_div">
-                <label for="name">Name:</label>
-                <!-- Input Below -->
-                 <div class="dropdown">
-                    <select id="dropdown_btn" class="dropdown_btn">
-                        <!-- The Names logged into the database from here -->
-                        <option value="#">Select:</option>
-                        <!-- EACH Value WILL BE READ FROM THE DB -->
-                        <option value="Lastname, One">Lastname, Onename</option>
-                        <option value="Lastname, Two">Lastname, Twoname</option>
-                        <option value="Lastname, Three">Lastname, Threename</option>
-                        <option value="Lastname, Four">Lastname, Fourname</option>
-                        <option value="Lastname, Five">Lastname, Fivename</option>
-                    </select>
-                 </div>
-             </div>
+        // Menu functionality
+        const menuButton = document.getElementById('menu_button');
+        const burgerIcon = document.getElementById('burger_one');
+        const sideMenu = document.querySelector('.side-menu');
+        const overlay = document.querySelector('.menu-overlay');
 
-              <!-- Pin # -->
-              <div class="input_div">
-                <label for="pin_num">Pin:</label>
-                <div class="pin_field" id="pin_field">
-                    <input type="password" class="pin_put" maxlength="1">
-                    <input type="password" class="pin_put" maxlength="1">
-                    <input type="password" class="pin_put" maxlength="1">
-                    <input type="password" class="pin_put" maxlength="1">
-                </div>
+        function toggleMenu() {
+            burgerIcon.classList.toggle('active');
+            sideMenu.classList.toggle('active');
+            overlay.classList.toggle('active');
+            // Body overflow set to ternery operator hidden or not hidden
+            body.style.overflow = body.style.overflow === 'hidden' ? '' : 'hidden';
+        }
 
-                <!-- Clear or Forgot Pin -->
-                 <div class="clear_forget">
-                    <!-- Reset Pins Button -->
-                    <button class="reset_button" id="reset_button">Clear the Pin</button>
+        menuButton.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
 
-                    <!-- Forgot Pin Button -->
-                     <button class="reset_button" id="forgot_button">Forgot Pin?</button>
-                 </div>
-                    
-              </div>
-
-               <!-- Submit Button -->
-               <button class="submit" id="submit_login">Submit</button>
-
-               <!-- Create Account -->
-               <a href="../html/create_acct.html" class="create_acct">Create an Account</a>
-         </form>
-     </div>
-    
+        // Close menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && sideMenu.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+    </script>
 </body>
-
-<!-- DARKMODE -->
-<script src="./js/darkmode.js"></script>
-
 </html>
