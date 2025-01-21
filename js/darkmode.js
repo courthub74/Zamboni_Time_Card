@@ -19,14 +19,12 @@ if (localStorage.getItem('darkMode') === 'true') {
 const menuButton = document.getElementById('menu_button');
 const burgerIcon = document.getElementById('burger_one');
 const burgerIcon2 = document.getElementById('burger_two');
-// const burgerIcons = document.querySelectorAll('burger');
 const sideMenu = document.querySelector('.side-menu');
 const overlay = document.querySelector('.menu-overlay');
 
 function toggleMenu() {
     burgerIcon.classList.toggle('active');
     burgerIcon2.classList.toggle('active');
-    // burgerIcons.classList.toggle('active');
     sideMenu.classList.toggle('active');
     overlay.classList.toggle('active');
     // Body overflow set to ternery operator hidden or not hidden
