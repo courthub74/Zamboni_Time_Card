@@ -1,41 +1,44 @@
-// FIRST get the current theme from LocalStorage
-let darkmode = localStorage.getItem('darkmode');
-
-// Query the Theme Switch button
+// Theme switching functionality
 const themeSwitch = document.getElementById('theme_switch');
+const body = document.body;
 
-// Functions for the toggle of the Dark/Light button
-
-// Function to enable Darkmode
-const enableDarkmode = () => {
-    // Add the darkmode class of the html body
-    document.body.classList.add('darkmode');
-    // Set the LocalStorage to darkmode as active
-        // LocalStorage only stores strings
-    localStorage.setItem('darkmode', 'active');
-}
-
-// Function to disable Darkmode
-const disableDarkmode = () => {
-    // Remove the darkmode class of the html body
-    document.body.classList.remove('darkmode');
-    // Set the LocalStorage to darkmode as null
-    localStorage.setItem('darkmode', null);
-}
-
-// Enable darkmode if it's installed in LocalStorage
-// You have to tell it what to do based on what's in LocalStorage
-if(darkmode === 'active') {
-    enableDarkmode();
-};
-
-// NOW add an event listener to the theme switch button
 themeSwitch.addEventListener('click', () => {
-    // Test Button
-    console.log("Theme Switch Pressed");
-    // Get theme set in LocalStorage
-    darkmode = localStorage.getItem('darkmode');
-    // conditional to see if darkmode is active or not
-    darkmode !== "active" ? enableDarkmode() : disableDarkmode()
+    body.classList.toggle('dark-mode');
+    // If the body contains dark mode, store it in a variable
+    const isDarkMode = body.classList.contains('dark-mode');
+    // store that variable into local storage
+    localStorage.setItem('darkMode', isDarkMode);
 });
 
+// If the local storage is in dark mode, make the body of the page dark mode
+if (localStorage.getItem('darkMode') === 'true') {
+    body.classList.add('dark-mode');
+}
+
+// Menu functionality
+const menuButton = document.getElementById('menu_button');
+const burgerIcon = document.getElementById('burger_one');
+const burgerIcon2 = document.getElementById('burger_two');
+// const burgerIcons = document.querySelectorAll('burger');
+const sideMenu = document.querySelector('.side-menu');
+const overlay = document.querySelector('.menu-overlay');
+
+function toggleMenu() {
+    burgerIcon.classList.toggle('active');
+    burgerIcon2.classList.toggle('active');
+    // burgerIcons.classList.toggle('active');
+    sideMenu.classList.toggle('active');
+    overlay.classList.toggle('active');
+    // Body overflow set to ternery operator hidden or not hidden
+    body.style.overflow = body.style.overflow === 'hidden' ? '' : 'hidden';
+}
+
+menuButton.addEventListener('click', toggleMenu);
+overlay.addEventListener('click', toggleMenu);
+
+// Close menu on escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && sideMenu.classList.contains('active')) {
+        toggleMenu();
+    }
+});
