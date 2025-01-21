@@ -15,6 +15,9 @@ if (localStorage.getItem('darkMode') === 'true') {
     body.classList.add('dark-mode');
 }
 
+/////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////
 // Menu functionality
 const menuButton = document.getElementById('menu_button');
 const burgerIcon = document.getElementById('burger_one');

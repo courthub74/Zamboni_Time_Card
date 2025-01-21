@@ -2,10 +2,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Calligraffitti&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noticia+Text&family=Playfair+Display&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Display:wght@500;700;900&family=Satisfy&family=Shadows+Into+Light&family=Shadows+Into+Light+Two&display=swap');
 
 :root {
+
+    /* Base */
     --background-color: #ffffff;
     --text-color: #000000;
+
+    /* Menu Colors */
     --menu-background: #f5f5f5;
     --menu-hover: #e0e0e0;
+    --menu-shadow: rgba(0, 0, 0, 0.1);
+
+     /* App State Colors */
+     --app-state-background: #74AEDC;
+     --app-state-trim: #000000;
 }
 
 body {
@@ -19,11 +28,19 @@ body {
 }
 
 body.dark-mode {
-    /* --background-color: #121212; */
+
+    /* Base */
     --background-color: black;
     --text-color: #ffffff;
+
+    /* Menu Colors */
     --menu-background: #101010;
     --menu-hover: #0d0d0d;
+    --menu-shadow: rgb(22, 33, 38);
+
+     /* App State Colors */
+     --app-state-background: #000000;
+     --app-state-trim: #74AEDC;
 }
 
 .main_nav {
@@ -32,7 +49,9 @@ body.dark-mode {
     align-items: center;
     padding: 1rem;
     background-color: var(--background-color);
+    /* Puts Box shadow on the bottom */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px var(--menu-shadow);
     position: relative;
     z-index: 1000;
 }
@@ -163,4 +182,76 @@ body:not(.dark-mode) .day-nite:nth-child(1) {
 /* For demonstrating menu items */
 .menu-item span {
     margin-left: 10px;
+}
+
+
+/* ************************************************* */
+/* ************************************************* */
+/* ************************************************* */
+/* ************************************************* */
+/* ***************THE BODY OF THE PAGE************** */
+
+/* Main Container */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+    /* background-color: blue; */
+    padding: 3em;
+    /* width: 80%; */
+}
+
+/* Header Div */
+.header_div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* gap: .8em; */
+    /* width: 50%; */
+}
+
+ /* Time Card Logo Div */
+ .header_logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Time Card Logo */
+.time_card_logo {
+    /* width: 15em; */
+    max-width: 1024px;
+    width: 100%;
+    height: 4em;
+}
+
+/* Time Card Logo Display order */
+
+/* NOW set the order of the IMGs in the Logo header */
+.header_logos img:last-child {
+    display: none;
+}
+
+/* Invert this for nite mode */
+.dark-mode .header_logos img:first-child {
+    display: none;
+}
+
+/* Make the Last child visible in the nite mode */
+.dark-mode .header_logos img:last-child {
+    display: block;
+}
+
+/* App State */
+.app_state {
+    background-color: var(--app-state-background);
+    border: 2px solid var(--app-state-trim);
+    color: white;
+    padding: .4em 3em;
+    text-align: center;
+    font-size: 1.1rem;
+    border-radius: 5px;
 }
