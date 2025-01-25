@@ -67,6 +67,7 @@ body.dark-mode {
      --button-text: white;
 }
 
+/* NAVBAR */
 .main_nav {
     display: flex;
     justify-content: space-between;
@@ -323,15 +324,6 @@ form {
     max-width: 1200px; */
 }
 
-/* Dropdown for Login Members */
-.dropdown {
-    /* position: relative;
-    display: inline-block; */
-    
-    /* width: 100%; */
-    /* background-color: #74AEDC; */
-    /* padding: 2em 2em; */
-}
 
 /* The Dropdown Button (The Select) */
 #dropdown_btn {
@@ -344,8 +336,9 @@ form {
     width: 15em; */
     cursor: pointer;
     display: flex;
-    width: 15em;
-    padding: .5em;
+    /* Mobile-friendly sizing */
+   height: 44px; /* Minimum touch target size */
+   padding: 10px 20px;
 }
 
  /* Name List */
